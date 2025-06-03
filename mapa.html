@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>YAestoy - Mapa en tiempo real</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://unpkg.com/maplibre-gl@2.4.0/dist/maplibre-gl.css" rel="stylesheet" />
+  <script src="https://unpkg.com/maplibre-gl@2.4.0/dist/maplibre-gl.js"></script>
+  <style>
+    body { margin: 0; padding: 0; }
+    #map { position: absolute; top: 0; bottom: 0; width: 100%; }
+  </style>
+</head>
+<body>
+  <div id="map"></div>
+  <script>
+    const map = new maplibregl.Map({
+      container: 'map',
+      style: 'https://demotiles.maplibre.org/style.json',
+      center: [-56.5186, -33.5253], // Flores, Uruguay
+      zoom: 12
+    });
+
+    map.addControl(new maplibregl.NavigationControl());
+
+    const ubicaciones = [
+      { lat: -33.5200, lng: -56.5100 },
+      { lat: -33.5235, lng: -56.5190 },
+      { lat: -33.5301, lng: -56.5180 }
+    ];
+
+    ubicaciones.forEach(ubicacion => {
+      new maplibregl.Marker()
+        .setLngLat([ubicacion.lng, ubicacion.lat])
+        .addTo(map);
+    });
+  </script>
+</body>
+</html>
