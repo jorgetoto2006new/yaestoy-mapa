@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Mapa en tiempo real</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/maplibre-gl@2.4.0/dist/maplibre-gl.js"></script>
+    <link href="https://unpkg.com/maplibre-gl@2.4.0/dist/maplibre-gl.css" rel="stylesheet" />
+    <style>
+      html, body { margin: 0; padding: 0; height: 100%; }
+      #map { width: 100%; height: 100%; }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+    <script>
+      const map = new maplibregl.Map({
+        container: "map",
+        style: "https://api.maptiler.com/maps/streets/style.json?key=eQPSKXI5Co4wTD1XEKCj",
+        center: [-56.897, -33.516],
+        zoom: 15
+      });
+
+      const dbUrl = "https://yaestoyapp-default-rtdb.firebaseio.com/ubicaciones.json";
+
+      async function cargarUbicaciones() {
+        const resp = await fetch(dbUrl);
+        const data = await resp.json();
+        if (data) {
+          Object.values(data).forEach(pos => {
+            new maplibregl.Marker().setLngLat([pos.lng, pos.lat]).addTo(map);
+          });
+        }
+      }
+
+      cargarUbicaciones();
+      setInterval(cargarUbicaciones, 5000);
+    </script>
+  </body>
+</html>
