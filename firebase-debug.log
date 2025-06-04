@@ -1,0 +1,133 @@
+[debug] [2025-06-04T04:14:24.372Z] ----------------------------------------------------------------------
+[debug] [2025-06-04T04:14:24.385Z] Command:       /usr/local/bin/node /usr/local/bin/firebase deploy
+[debug] [2025-06-04T04:14:24.385Z] CLI Version:   14.5.1
+[debug] [2025-06-04T04:14:24.385Z] Platform:      darwin
+[debug] [2025-06-04T04:14:24.385Z] Node Version:  v22.16.0
+[debug] [2025-06-04T04:14:24.386Z] Time:          Wed Jun 04 2025 01:14:24 GMT-0300 (Uruguay Standard Time)
+[debug] [2025-06-04T04:14:24.386Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-06-04T04:14:24.634Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-06-04T04:14:24.635Z] > authorizing via signed-in user (jorgetoto2006new@gmail.com)
+[debug] [2025-06-04T04:14:24.635Z] [iam] checking project yaestoyapp for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2025-06-04T04:14:24.637Z] Checked if tokens are valid: false, expires at: 1749011098029
+[debug] [2025-06-04T04:14:24.637Z] Checked if tokens are valid: false, expires at: 1749011098029
+[debug] [2025-06-04T04:14:24.637Z] > refreshing access token with scopes: []
+[debug] [2025-06-04T04:14:24.640Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2025-06-04T04:14:24.640Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-06-04T04:14:24.889Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2025-06-04T04:14:24.889Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-06-04T04:14:24.936Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/yaestoyapp:testIamPermissions [none]
+[debug] [2025-06-04T04:14:24.936Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/yaestoyapp:testIamPermissions x-goog-quota-user=projects/yaestoyapp
+[debug] [2025-06-04T04:14:24.937Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/yaestoyapp:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2025-06-04T04:14:25.921Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/yaestoyapp:testIamPermissions 200
+[debug] [2025-06-04T04:14:25.921Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/yaestoyapp:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2025-06-04T04:14:25.922Z] Checked if tokens are valid: true, expires at: 1749014063889
+[debug] [2025-06-04T04:14:25.922Z] Checked if tokens are valid: true, expires at: 1749014063889
+[debug] [2025-06-04T04:14:25.922Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/yaestoyapp [none]
+[debug] [2025-06-04T04:14:26.330Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/yaestoyapp 200
+[debug] [2025-06-04T04:14:26.330Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/yaestoyapp {"projectId":"yaestoyapp","projectNumber":"455008386280","displayName":"YAestoyApp","name":"projects/yaestoyapp","resources":{"hostingSite":"yaestoyapp","realtimeDatabaseInstance":"yaestoyapp-default-rtdb"},"state":"ACTIVE","etag":"1_3881e1d4-ee97-40e2-bb3c-a5b6e1216d6e"}
+[info] 
+[info] === Deploying to 'yaestoyapp'...
+[info] 
+[info] i  deploying hosting 
+[debug] [2025-06-04T04:14:26.334Z] Checked if tokens are valid: true, expires at: 1749014063889
+[debug] [2025-06-04T04:14:26.334Z] Checked if tokens are valid: true, expires at: 1749014063889
+[debug] [2025-06-04T04:14:26.334Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/yaestoyapp/versions [none]
+[debug] [2025-06-04T04:14:26.334Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/yaestoyapp/versions {"status":"CREATED","labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2025-06-04T04:14:28.136Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/yaestoyapp/versions 200
+[debug] [2025-06-04T04:18:52.021Z] ----------------------------------------------------------------------
+[debug] [2025-06-04T04:18:52.025Z] Command:       /usr/local/bin/node /usr/local/bin/firebase deploy
+[debug] [2025-06-04T04:18:52.025Z] CLI Version:   14.5.1
+[debug] [2025-06-04T04:18:52.025Z] Platform:      darwin
+[debug] [2025-06-04T04:18:52.025Z] Node Version:  v22.16.0
+[debug] [2025-06-04T04:18:52.026Z] Time:          Wed Jun 04 2025 01:18:52 GMT-0300 (Uruguay Standard Time)
+[debug] [2025-06-04T04:18:52.026Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-06-04T04:18:52.270Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-06-04T04:18:52.271Z] > authorizing via signed-in user (jorgetoto2006new@gmail.com)
+[debug] [2025-06-04T04:18:52.271Z] [iam] checking project yaestoyapp for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2025-06-04T04:18:52.272Z] Checked if tokens are valid: true, expires at: 1749014063889
+[debug] [2025-06-04T04:18:52.272Z] Checked if tokens are valid: true, expires at: 1749014063889
+[debug] [2025-06-04T04:18:52.273Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/yaestoyapp:testIamPermissions [none]
+[debug] [2025-06-04T04:18:52.274Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/yaestoyapp:testIamPermissions x-goog-quota-user=projects/yaestoyapp
+[debug] [2025-06-04T04:18:52.274Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/yaestoyapp:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2025-06-04T04:18:53.213Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/yaestoyapp:testIamPermissions 200
+[debug] [2025-06-04T04:18:53.213Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/yaestoyapp:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2025-06-04T04:18:53.214Z] Checked if tokens are valid: true, expires at: 1749014063889
+[debug] [2025-06-04T04:18:53.214Z] Checked if tokens are valid: true, expires at: 1749014063889
+[debug] [2025-06-04T04:18:53.214Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/yaestoyapp [none]
+[debug] [2025-06-04T04:18:53.689Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/yaestoyapp 200
+[debug] [2025-06-04T04:18:53.689Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/yaestoyapp {"projectId":"yaestoyapp","projectNumber":"455008386280","displayName":"YAestoyApp","name":"projects/yaestoyapp","resources":{"hostingSite":"yaestoyapp","realtimeDatabaseInstance":"yaestoyapp-default-rtdb"},"state":"ACTIVE","etag":"1_3881e1d4-ee97-40e2-bb3c-a5b6e1216d6e"}
+[info] 
+[info] === Deploying to 'yaestoyapp'...
+[info] 
+[info] i  deploying hosting 
+[debug] [2025-06-04T04:18:53.693Z] Checked if tokens are valid: true, expires at: 1749014063889
+[debug] [2025-06-04T04:18:53.693Z] Checked if tokens are valid: true, expires at: 1749014063889
+[debug] [2025-06-04T04:18:53.693Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/yaestoyapp/versions [none]
+[debug] [2025-06-04T04:18:53.693Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/yaestoyapp/versions {"status":"CREATED","labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2025-06-04T04:18:55.540Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/yaestoyapp/versions 200
+[debug] [2025-06-04T04:28:10.019Z] ----------------------------------------------------------------------
+[debug] [2025-06-04T04:28:10.031Z] Command:       /usr/local/bin/node /usr/local/bin/firebase deploy
+[debug] [2025-06-04T04:28:10.032Z] CLI Version:   14.5.1
+[debug] [2025-06-04T04:28:10.032Z] Platform:      darwin
+[debug] [2025-06-04T04:28:10.032Z] Node Version:  v22.16.0
+[debug] [2025-06-04T04:28:10.033Z] Time:          Wed Jun 04 2025 01:28:10 GMT-0300 (Uruguay Standard Time)
+[debug] [2025-06-04T04:28:10.033Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-06-04T04:28:10.280Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-06-04T04:28:10.280Z] > authorizing via signed-in user (jorgetoto2006new@gmail.com)
+[debug] [2025-06-04T04:28:10.281Z] [iam] checking project yaestoyapp for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2025-06-04T04:28:10.283Z] Checked if tokens are valid: true, expires at: 1749014063889
+[debug] [2025-06-04T04:28:10.283Z] Checked if tokens are valid: true, expires at: 1749014063889
+[debug] [2025-06-04T04:28:10.284Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/yaestoyapp:testIamPermissions [none]
+[debug] [2025-06-04T04:28:10.284Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/yaestoyapp:testIamPermissions x-goog-quota-user=projects/yaestoyapp
+[debug] [2025-06-04T04:28:10.284Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/yaestoyapp:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2025-06-04T04:28:11.402Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/yaestoyapp:testIamPermissions 200
+[debug] [2025-06-04T04:28:11.402Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/yaestoyapp:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2025-06-04T04:28:11.402Z] Checked if tokens are valid: true, expires at: 1749014063889
+[debug] [2025-06-04T04:28:11.402Z] Checked if tokens are valid: true, expires at: 1749014063889
+[debug] [2025-06-04T04:28:11.403Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/yaestoyapp [none]
+[debug] [2025-06-04T04:28:11.806Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/yaestoyapp 200
+[debug] [2025-06-04T04:28:11.807Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/yaestoyapp {"projectId":"yaestoyapp","projectNumber":"455008386280","displayName":"YAestoyApp","name":"projects/yaestoyapp","resources":{"hostingSite":"yaestoyapp","realtimeDatabaseInstance":"yaestoyapp-default-rtdb"},"state":"ACTIVE","etag":"1_3881e1d4-ee97-40e2-bb3c-a5b6e1216d6e"}
+[info] 
+[info] === Deploying to 'yaestoyapp'...
+[info] 
+[info] i  deploying hosting 
+[debug] [2025-06-04T04:28:11.810Z] Checked if tokens are valid: true, expires at: 1749014063889
+[debug] [2025-06-04T04:28:11.811Z] Checked if tokens are valid: true, expires at: 1749014063889
+[debug] [2025-06-04T04:28:11.811Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/yaestoyapp/versions [none]
+[debug] [2025-06-04T04:28:11.811Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/yaestoyapp/versions {"status":"CREATED","labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2025-06-04T04:28:13.853Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/yaestoyapp/versions 200
+[debug] [2025-06-04T04:48:00.260Z] ----------------------------------------------------------------------
+[debug] [2025-06-04T04:48:00.263Z] Command:       /usr/local/bin/node /usr/local/bin/firebase deploy
+[debug] [2025-06-04T04:48:00.264Z] CLI Version:   14.5.1
+[debug] [2025-06-04T04:48:00.264Z] Platform:      darwin
+[debug] [2025-06-04T04:48:00.264Z] Node Version:  v22.16.0
+[debug] [2025-06-04T04:48:00.265Z] Time:          Wed Jun 04 2025 01:48:00 GMT-0300 (Uruguay Standard Time)
+[debug] [2025-06-04T04:48:00.265Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-06-04T04:48:00.521Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-06-04T04:48:00.522Z] > authorizing via signed-in user (jorgetoto2006new@gmail.com)
+[debug] [2025-06-04T04:48:00.522Z] [iam] checking project yaestoyapp for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2025-06-04T04:48:00.524Z] Checked if tokens are valid: true, expires at: 1749014063889
+[debug] [2025-06-04T04:48:00.524Z] Checked if tokens are valid: true, expires at: 1749014063889
+[debug] [2025-06-04T04:48:00.525Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/yaestoyapp:testIamPermissions [none]
+[debug] [2025-06-04T04:48:00.525Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/yaestoyapp:testIamPermissions x-goog-quota-user=projects/yaestoyapp
+[debug] [2025-06-04T04:48:00.525Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/yaestoyapp:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2025-06-04T04:48:01.516Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/yaestoyapp:testIamPermissions 200
+[debug] [2025-06-04T04:48:01.517Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/yaestoyapp:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2025-06-04T04:48:01.517Z] Checked if tokens are valid: true, expires at: 1749014063889
+[debug] [2025-06-04T04:48:01.517Z] Checked if tokens are valid: true, expires at: 1749014063889
+[debug] [2025-06-04T04:48:01.518Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/yaestoyapp [none]
+[debug] [2025-06-04T04:48:01.905Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/yaestoyapp 200
+[debug] [2025-06-04T04:48:01.906Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/yaestoyapp {"projectId":"yaestoyapp","projectNumber":"455008386280","displayName":"YAestoyApp","name":"projects/yaestoyapp","resources":{"hostingSite":"yaestoyapp","realtimeDatabaseInstance":"yaestoyapp-default-rtdb"},"state":"ACTIVE","etag":"1_3881e1d4-ee97-40e2-bb3c-a5b6e1216d6e"}
+[info] 
+[info] === Deploying to 'yaestoyapp'...
+[info] 
+[info] i  deploying hosting 
+[debug] [2025-06-04T04:48:01.909Z] Checked if tokens are valid: true, expires at: 1749014063889
+[debug] [2025-06-04T04:48:01.909Z] Checked if tokens are valid: true, expires at: 1749014063889
+[debug] [2025-06-04T04:48:01.909Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/yaestoyapp/versions [none]
+[debug] [2025-06-04T04:48:01.910Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/yaestoyapp/versions {"status":"CREATED","labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2025-06-04T04:48:03.761Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/yaestoyapp/versions 200

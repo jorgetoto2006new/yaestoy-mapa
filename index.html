@@ -1,91 +1,44 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <title>YAestoy - Mapa en tiempo real</title>
+  <meta charset="utf-8" />
+  <title>YAestoy - Ubicación Real</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://unpkg.com/maplibre-gl@3.5.3/dist/maplibre-gl.css" rel="stylesheet" />
+  <script src="https://unpkg.com/maplibre-gl@3.5.3/dist/maplibre-gl.js"></script>
   <style>
-    html, body, #map { height: 100%; margin: 0; padding: 0; }
+    html, body { margin: 0; padding: 0; height: 100%; }
+    #map { width: 100%; height: 100%; }
   </style>
-  <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"/>
-  <script src="https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/10.11.0/firebase-database.js"></script>
 </head>
 <body>
   <div id="map"></div>
-
   <script>
-    const firebaseConfig = {
-      apiKey: "AIzaSyCO0uQbaB-KANiBgATuFZ5K-Hdu5RStS_8",
-      authDomain: "yaestoyapp.firebaseapp.com",
-      databaseURL: "https://yaestoyapp-default-rtdb.firebaseio.com",
-      projectId: "yaestoyapp",
-      storageBucket: "yaestoyapp.appspot.com",
-      messagingSenderId: "455008386280",
-      appId: "1:455008386280:web:57d35f14a45cd2260d5d5d",
-      measurementId: "G-M8L4FZ5DTB"
-    };
-
-    firebase.initializeApp(firebaseConfig);
-    const db = firebase.database();
-
-    const map = L.map('map').setView([-33.516, -56.9], 14);
-    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
-
-    const markers = {};
-    const ref = db.ref('ubicaciones');
-    ref.on('value', snapshot => {
-      const data = snapshot.val();
-      Object.values(markers).forEach(m => map.removeLayer(m));
-      for (const key in data) {
-        const { lat, lng } = data[key];
-        if (lat && lng) {
-          const marker = L.marker([lat, lng]).addTo(map)
-            .bindPopup(`Pedido de ${key}`);
-          markers[key] = marker;
-        }
-      }
+    const map = new maplibregl.Map({
+      container: 'map',
+      style: 'https://tiles.stadiamaps.com/styles/alidade_smooth.json',
+      center: [-56.8972, -33.5246],
+      zoom: 14
     });
+
+    const marker = new maplibregl.Marker({ color: 'red' })
+      .setLngLat([-56.8972, -33.5246])
+      .addTo(map);
+
+    async function actualizarUbicacion() {
+      try {
+        const res = await fetch("https://jorgetoto2006new.github.io/yaestoy-mapa/ubicaciones.json");
+        const data = await res.json();
+        if (data && data.lat && data.lng) {
+          marker.setLngLat([data.lng, data.lat]);
+          map.setCenter([data.lng, data.lat]);
+        }
+      } catch (e) {
+        console.error("Error al cargar ubicación:", e);
+      }
+    }
+
+    setInterval(actualizarUbicacion, 5000);
   </script>
 </body>
-</html>
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <title>Mapa en tiempo real</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="https://unpkg.com/maplibre-gl@2.4.0/dist/maplibre-gl.js"></script>
-    <link href="https://unpkg.com/maplibre-gl@2.4.0/dist/maplibre-gl.css" rel="stylesheet" />
-    <style>
-      html, body { margin: 0; padding: 0; height: 100%; }
-      #map { width: 100%; height: 100%; }
-    </style>
-  </head>
-  <body>
-    <div id="map"></div>
-    <script>
-      const map = new maplibregl.Map({
-        container: "map",
-        style: "https://api.maptiler.com/maps/streets/style.json?key=eQPSKXI5Co4wTD1XEKCj",
-        center: [-56.897, -33.516],
-        zoom: 15
-      });
-
-      const dbUrl = "https://yaestoyapp-default-rtdb.firebaseio.com/ubicaciones.json";
-
-      async function cargarUbicaciones() {
-        const resp = await fetch(dbUrl);
-        const data = await resp.json();
-        if (data) {
-          Object.values(data).forEach(pos => {
-            new maplibregl.Marker().setLngLat([pos.lng, pos.lat]).addTo(map);
-          });
-        }
-      }
-
-      cargarUbicaciones();
-      setInterval(cargarUbicaciones, 5000);
-    </script>
-  </body>
 </html>
